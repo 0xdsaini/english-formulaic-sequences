@@ -222,11 +222,172 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 }
 @media (prefers-reduced-motion:reduce){.sidebar,.shell,.toast{transition:none!important}}
 
+
+/* Daily discovery cards and persistent light/dark appearance */
+.theme-toggle{font-size:21px;line-height:1}
+.phrase-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 0 28px}
+.spotlight-card{min-width:0;border:1px solid #E1D7C8;border-radius:18px;padding:clamp(17px,2.5vw,25px);background:#F8F2E8;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.daily-card{background:#F2F6FD;border-color:#D7E2F3}
+.random-card{background:#F4F8F1;border-color:#D8E6D1}
+.spotlight-top{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.spotlight-kicker{font-size:11px;letter-spacing:.12em;font-weight:900;color:#9A6B2F}
+.spotlight-date{font-size:12px;color:#7A8493}
+.spotlight-phrase{font:600 clamp(21px,2.4vw,29px)/1.3 Georgia,"Times New Roman",serif;letter-spacing:-.02em;margin:2px 0;color:#1D2B42;overflow-wrap:anywhere}
+.spotlight-example{margin:0;font-size:15px;line-height:1.6;color:#334155;overflow-wrap:anywhere}
+.spotlight-note{margin:0;font-size:13px;line-height:1.55;color:#647084;overflow-wrap:anywhere}
+.spotlight-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+.spotlight-actions button{min-height:39px}
+.dice-btn{background:#245DCE;border-color:#245DCE}
+.spotlight-card button:disabled{opacity:.45;cursor:not-allowed}
+body.dark-theme{--paper:#151922;--ink:#EEF2F8;--muted:#AAB4C5;--line:#343B49;--soft:#242B38;background:#151922;color:#EEF2F8;color-scheme:dark}
+body.dark-theme .top{background:rgba(21,25,34,.94);border-color:#343B49}
+body.dark-theme .sidebar{background:#191E29;border-color:#343B49}
+body.dark-theme .nav-link{color:#BBC4D2}
+body.dark-theme .nav-link:hover{background:#272F3D}
+body.dark-theme .nav-link.active{background:#263650;color:#EAF1FF}
+body.dark-theme .nav-num,body.dark-theme .brand span,body.dark-theme .eyebrow,body.dark-theme .part-label{color:#E2B95F}
+body.dark-theme .search input,body.dark-theme .icon-btn,body.dark-theme .filter{background:#202633;color:#EEF2F8;border-color:#3A4353}
+body.dark-theme .search input::placeholder{color:#AAB4C5}
+body.dark-theme .filter{color:#C2CAD7}
+body.dark-theme .filter.active{background:#E7ECF5;color:#182131;border-color:#E7ECF5}
+body.dark-theme .saved-filter.active{background:#FCE7A9!important;color:#654A0C!important}
+body.dark-theme .chapter-head,body.dark-theme .entry-list,body.dark-theme details.entry{border-color:#343B49}
+body.dark-theme .section-title{color:#D3DCE9}
+body.dark-theme details.entry[open]{background:#1B212D}
+body.dark-theme .reg.casual{background:#493421;color:#F6C994}
+body.dark-theme .reg.neutral{background:#263D31;color:#B8E4C3}
+body.dark-theme .reg.business{background:#30334E;color:#CDD0FF}
+body.dark-theme .reg.avoid{background:#482B31;color:#FFC4C4}
+body.dark-theme .example{color:#E0E6F0}
+body.dark-theme .note,body.dark-theme .detail-label,body.dark-theme .chapter-meta,body.dark-theme .intro p,body.dark-theme .utility-hint,body.dark-theme .result-count,body.dark-theme .footer{color:#AAB4C5}
+body.dark-theme .copy-phrase{background:#202B40;color:#AFCBFF;border-color:#405A80}
+body.dark-theme .save-phrase{background:#382F1C;color:#F5D88C;border-color:#6E5A2C}
+body.dark-theme .save-phrase:hover,body.dark-theme .save-phrase.saved{background:#57451E}
+body.dark-theme .utility-btn{background:#202633;color:#E5EAF2;border-color:#3A4353}
+body.dark-theme .utility-btn:hover{background:#2A3342}
+body.dark-theme .primary-btn{background:#3A70D6;color:white;border-color:#3A70D6}
+body.dark-theme .spotlight-card{background:#202633;border-color:#3A4353}
+body.dark-theme .daily-card{background:#202B3D;border-color:#344966}
+body.dark-theme .random-card{background:#222F2A;border-color:#3B5045}
+body.dark-theme .spotlight-phrase{color:#F0F4FA}
+body.dark-theme .spotlight-example{color:#D7DFEA}
+body.dark-theme .spotlight-note,body.dark-theme .spotlight-date{color:#AAB7C9}
+body.dark-theme .spotlight-kicker{color:#E2B95F}
+body.dark-theme .empty{border-color:#3A4353;color:#AAB4C5}
+body.dark-theme .empty strong{color:#EEF2F8}
+body.dark-theme .toast{background:#E7ECF5;color:#182131}
+body.dark-theme .practice-dialog{background:#1B212D;border-color:#3A4353;color:#EEF2F8}
+body.dark-theme .practice-dialog h2,body.dark-theme .practice-phrase{color:#D6E4FF}
+body.dark-theme .practice-progress,body.dark-theme .practice-example,body.dark-theme .practice-note,body.dark-theme .practice-tip{color:#B2BDCE}
+body.dark-theme .practice-cue{background:#20372F;border-color:#345B4D;color:#D9F5E9}
+body.dark-theme .practice-close{background:#2A3342;color:#EEF2F8}
+body.dark-theme .entry-actions .copy-phrase,body.dark-theme .entry-actions .save-phrase{color:inherit}
+@media(max-width:780px){.phrase-tools{grid-template-columns:minmax(0,1fr);gap:12px}.spotlight-card{border-radius:15px}.spotlight-phrase{font-size:clamp(22px,6vw,28px)}}
+@media(prefers-reduced-motion:reduce){.spotlight-card{transition:none}}
+
+
+/* Reference-first layout: the daily phrase is the only spotlight; random discovery stays secondary. */
+.phrase-tools{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:0 0 28px}
+.random-quiet{font-weight:600}
+@media(max-width:520px){.spotlight-actions{width:100%}.spotlight-actions button{flex:1}}
+/* Theme tokens are applied to every component, not just the page background. */
+:root{
+ --surface:#FFFFFF;--surface-raised:#FFFFFF;--surface-subtle:#F1F6FC;
+ --text-strong:#17243B;--text-body:#263A58;--text-muted:#596A82;
+ --border-soft:#DCE5F0;--surface-hover:#EAF2FF;--accent:#3478F6;
+}
+body{background:var(--paper);color:var(--ink)}
+body.dark-theme{
+ --paper:#111722;--ink:#E8EDF5;--muted:#A6B2C5;--line:#303B4D;--soft:#1C2635;
+ --surface:#182130;--surface-raised:#1D293A;--surface-subtle:#202D40;
+ --text-strong:#F0F4FB;--text-body:#D6DFEC;--text-muted:#A6B2C5;
+ --border-soft:#354256;--surface-hover:#26364D;--accent:#8BB5FF;
+ --focus-soft:#263A56;--amber-soft:#3B3323;--teal-soft:#1D3937;
+ background:var(--paper)!important;color:var(--ink)!important;color-scheme:dark;
+}
+body.dark-theme .top{
+ background:rgba(17,23,34,.96)!important;border-color:var(--line)!important;
+ box-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+body.dark-theme .brand,body.dark-theme .intro h1,body.dark-theme .chapter-title,
+body.dark-theme .phrase,body.dark-theme .dice-copy strong{color:var(--text-strong)!important}
+body.dark-theme .sidebar{background:#151E2C!important;border-color:var(--line)!important}
+body.dark-theme .side-head,body.dark-theme .nav-link{color:#B9C5D7}
+body.dark-theme .nav-part{color:#91A9CE}
+body.dark-theme .nav-link:hover{background:#202E42!important}
+body.dark-theme .nav-link.active{background:#263B59!important;color:#EAF2FF!important;box-shadow:inset 3px 0 0 #8BB5FF!important}
+body.dark-theme .nav-num,body.dark-theme .brand span,body.dark-theme .eyebrow,body.dark-theme .part-label{color:#9FC2FF!important}
+body.dark-theme .search input,body.dark-theme .icon-btn,body.dark-theme .filter{
+ background:#1B2636!important;color:#E8EDF5!important;border-color:#354256!important;
+}
+body.dark-theme .search input::placeholder{color:#9AAAC0!important}
+body.dark-theme .search kbd{background:#27354A!important;color:#B8C8E0!important}
+body.dark-theme .search .clear-search{background:#2B394E!important;color:#D7E5FA!important}
+body.dark-theme .icon-btn:hover,body.dark-theme .filter:hover{background:#293A51!important}
+body.dark-theme .filter.active{background:#8BB5FF!important;border-color:#8BB5FF!important;color:#142033!important;box-shadow:none!important}
+body.dark-theme .saved-filter,body.dark-theme .saved-filter.active{background:#3B3323!important;color:#F5D88C!important;border-color:#75633C!important}
+body.dark-theme .saved-filter span{background:#272D36!important;color:#F5D88C!important}
+body.dark-theme .chapter-head,body.dark-theme .entry-list,body.dark-theme details.entry{border-color:var(--line)!important}
+body.dark-theme details.entry{background:var(--surface)!important;box-shadow:0 2px 5px rgba(0,0,0,.12)!important}
+body.dark-theme details.entry:hover{background:#1C293B!important;border-color:#4B607C!important}
+body.dark-theme details.entry[open]{background:#1C293B!important;border-color:#5576A8!important;box-shadow:0 5px 18px rgba(0,0,0,.2)!important}
+body.dark-theme .section-title{color:#D2DDED!important}
+body.dark-theme .reg.casual{background:#493126!important;color:#FFC5A7!important}
+body.dark-theme .reg.neutral{background:#1F403C!important;color:#A9E8D9!important}
+body.dark-theme .reg.business{background:#263A5C!important;color:#BBD3FF!important}
+body.dark-theme .reg.avoid{background:#482934!important;color:#FFC0CE!important}
+body.dark-theme .example{color:#E2E9F3!important}
+body.dark-theme .note{background:#202D40!important;border-left-color:#6D98DC!important;color:#C2D0E4!important}
+body.dark-theme .detail-label{color:#A9C8FF!important}
+body.dark-theme .chapter-meta,body.dark-theme .intro p,body.dark-theme .utility-hint,
+body.dark-theme .result-count,body.dark-theme .footer{color:var(--text-muted)!important}
+body.dark-theme .chapter-number{color:#E6B85F!important}
+body.dark-theme .empty{background:#182130!important;border-color:#3A4A61!important;color:#A6B2C5!important}
+body.dark-theme .empty strong{color:#F0F4FB!important}
+body.dark-theme .utility-row,body.dark-theme .dice-row{background:#172130!important;border-color:#344257!important}
+body.dark-theme .utility-btn{background:#202D40!important;color:#D8E6FA!important;border-color:#3B4D66!important}
+body.dark-theme .utility-btn:hover{background:#2A3B52!important}
+body.dark-theme .primary-btn{background:#8BB5FF!important;border-color:#8BB5FF!important;color:#142033!important}
+body.dark-theme .spotlight-card,body.dark-theme .daily-card{background:#1A2637!important;border-color:#354966!important}
+body.dark-theme .spotlight-phrase{color:#F0F4FB!important}
+body.dark-theme .spotlight-example{color:#D6DFEC!important}
+body.dark-theme .spotlight-note,body.dark-theme .spotlight-date{color:#A6B5CA!important}
+body.dark-theme .spotlight-kicker{color:#E6C47C!important}
+body.dark-theme .copy-phrase{background:#202D40!important;color:#BBD3FF!important;border-color:#3B4D66!important}
+body.dark-theme .save-phrase{background:#3A321F!important;color:#F5D88C!important;border-color:#6E5A2C!important}
+body.dark-theme .save-phrase:hover,body.dark-theme .save-phrase.saved{background:#514322!important}
+body.dark-theme .toast{background:#E3EAF5!important;color:#152033!important}
+body.dark-theme .practice-backdrop{background:rgba(0,0,0,.72)!important}
+body.dark-theme .practice-dialog{background:#182130!important;border-color:#354256!important;color:#E8EDF5!important}
+body.dark-theme .practice-dialog h2,body.dark-theme .practice-phrase{color:#E5EEFF!important}
+body.dark-theme .practice-kicker{color:#9FC2FF!important}
+body.dark-theme .practice-progress,body.dark-theme .practice-example,body.dark-theme .practice-note,
+body.dark-theme .practice-tip{color:#B6C3D6!important}
+body.dark-theme .practice-close{background:#2A394E!important;color:#E8EDF5!important}
+body.dark-theme .practice-cue{background:#1D3937!important;border-color:#315B55!important;color:#D1F3EA!important}
+body.dark-theme .recall-rating{border-color:#354256!important}
+body.dark-theme .rating-prompt{color:#D6DFEC!important}
+body.dark-theme .rating-btn.again{background:#482934!important;border-color:#754052!important;color:#FFC0CE!important}
+body.dark-theme .rating-btn.effort{background:#3B3323!important;border-color:#75633C!important;color:#F5D88C!important}
+body.dark-theme .rating-btn.easy{background:#1F403C!important;border-color:#315B55!important;color:#A9E8D9!important}
+body.dark-theme .empty strong{color:#F0F4FB!important}
+body.dark-theme ::selection{background:#375987!important;color:#FFFFFF!important}
+body.dark-theme :focus-visible{outline-color:#9FC2FF!important}
+
 </style></head><body>
-<header class="top"><button class="icon-btn" id="toggle-nav" aria-label="Toggle chapter sidebar" title="Toggle chapter sidebar">☰</button><a class="brand" href="#"><span>READY</span> TO SAY</a><div class="search"><input id="search" type="search" placeholder="Search phrases, situations, examples…" aria-label="Search phrases, situations, examples"><button class="clear-search" id="clear-search" type="button" aria-label="Clear search" title="Clear search" hidden>×</button><kbd>⌘ K</kbd></div></header>
+<header class="top"><button class="icon-btn" id="toggle-nav" aria-label="Toggle chapter sidebar" title="Toggle chapter sidebar">☰</button><a class="brand" href="#"><span>READY</span> TO SAY</a><div class="search"><input id="search" type="search" placeholder="Search phrases, situations, examples…" aria-label="Search phrases, situations, examples"><button class="clear-search" id="clear-search" type="button" aria-label="Clear search" title="Clear search" hidden>×</button><kbd>⌘ K</kbd></div><button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme">☾</button></header>
 <div class="shell" id="shell"><aside class="sidebar" id="sidebar"><div class="side-head"><span>CHAPTERS</span><button class="icon-btn" id="close-nav" aria-label="Close sidebar">×</button></div><div class="nav-group"><div class="nav-part">STARTING & ENDING</div><a class="nav-link" href="#ch-1"><span class="nav-num">01</span><span class="nav-label">1 Greetings &amp; Openers</span></a><a class="nav-link" href="#ch-2"><span class="nav-num">02</span><span class="nav-label">2 Small Talk &amp; Catching Up</span></a><a class="nav-link" href="#ch-3"><span class="nav-num">03</span><span class="nav-label">3 Goodbyes &amp; Sign-Offs</span></a></div><div class="nav-group"><div class="nav-part">OPINIONS & REACTIONS</div><a class="nav-link" href="#ch-4"><span class="nav-num">04</span><span class="nav-label">4 Agreeing</span></a><a class="nav-link" href="#ch-5"><span class="nav-num">05</span><span class="nav-label">5 Disagreeing</span></a><a class="nav-link" href="#ch-6"><span class="nav-num">06</span><span class="nav-label">6 Giving Your Opinion</span></a><a class="nav-link" href="#ch-7"><span class="nav-num">07</span><span class="nav-label">7 Softening, Hedging &amp; Strengthening</span></a><a class="nav-link" href="#ch-8"><span class="nav-num">08</span><span class="nav-label">8 Reacting: Surprise, Excitement, Sympathy &amp; Doubt</span></a><a class="nav-link" href="#ch-9"><span class="nav-num">09</span><span class="nav-label">9 Compliments &amp; Congratulations</span></a></div><div class="nav-group"><div class="nav-part">ASKING, OFFERING & REFUSING</div><a class="nav-link" href="#ch-10"><span class="nav-num">10</span><span class="nav-label">Making Requests &amp; Asking for Favors</span></a><a class="nav-link" href="#ch-11"><span class="nav-num">11</span><span class="nav-label">Offering &amp; Accepting Help</span></a><a class="nav-link" href="#ch-12"><span class="nav-num">12</span><span class="nav-label">Saying No &amp; Declining</span></a><a class="nav-link" href="#ch-13"><span class="nav-num">13</span><span class="nav-label">Thanking &amp; Responding to Thanks</span></a><a class="nav-link" href="#ch-14"><span class="nav-num">14</span><span class="nav-label">Apologizing &amp; Accepting Apologies</span></a></div><div class="nav-group"><div class="nav-part">STEERING THE CONVERSATION</div><a class="nav-link" href="#ch-15"><span class="nav-num">15</span><span class="nav-label">Clarifying &amp; Confirming Understanding</span></a><a class="nav-link" href="#ch-16"><span class="nav-num">16</span><span class="nav-label">Interrupting, Redirecting &amp; Changing the Subject</span></a><a class="nav-link" href="#ch-17"><span class="nav-num">17</span><span class="nav-label">Buying Time, Thinking Aloud &amp; Not Knowing</span></a><a class="nav-link" href="#ch-18"><span class="nav-num">18</span><span class="nav-label">Storytelling &amp; Connectors</span></a><a class="nav-link" href="#ch-19"><span class="nav-num">19</span><span class="nav-label">Summarizing &amp; Wrapping Up</span></a></div><div class="nav-group"><div class="nav-part">FRIENDS & SOCIAL LIFE</div><a class="nav-link" href="#ch-20"><span class="nav-num">20</span><span class="nav-label">Plans &amp; Invitations</span></a><a class="nav-link" href="#ch-21"><span class="nav-num">21</span><span class="nav-label">Giving &amp; Asking for Advice</span></a><a class="nav-link" href="#ch-22"><span class="nav-num">22</span><span class="nav-label">Encouraging &amp; Comforting</span></a><a class="nav-link" href="#ch-23"><span class="nav-num">23</span><span class="nav-label">Venting &amp; Complaining</span></a><a class="nav-link" href="#ch-24"><span class="nav-num">24</span><span class="nav-label">Banter, Teasing &amp; Playful Pushback</span></a><a class="nav-link" href="#ch-25"><span class="nav-num">25</span><span class="nav-label">Current Slang &amp; Texting Language</span></a></div><div class="nav-group"><div class="nav-part">THE WORKPLACE</div><a class="nav-link" href="#ch-26"><span class="nav-num">26</span><span class="nav-label">Meetings</span></a><a class="nav-link" href="#ch-27"><span class="nav-num">27</span><span class="nav-label">Email Craft</span></a><a class="nav-link" href="#ch-28"><span class="nav-num">28</span><span class="nav-label">Status Updates, Deadlines &amp; Delegation</span></a><a class="nav-link" href="#ch-29"><span class="nav-num">29</span><span class="nav-label">Pushing Back &amp; Negotiating</span></a><a class="nav-link" href="#ch-30"><span class="nav-num">30</span><span class="nav-label">Giving &amp; Receiving Feedback</span></a><a class="nav-link" href="#ch-31"><span class="nav-num">31</span><span class="nav-label">Owning Mistakes &amp; Delivering Bad News</span></a><a class="nav-link" href="#ch-32"><span class="nav-num">32</span><span class="nav-label">Following Up &amp; Nudging</span></a><a class="nav-link" href="#ch-33"><span class="nav-num">33</span><span class="nav-label">Presentations &amp; Public Speaking</span></a><a class="nav-link" href="#ch-34"><span class="nav-num">34</span><span class="nav-label">Networking &amp; Job Interviews</span></a><a class="nav-link" href="#ch-35"><span class="nav-num">35</span><span class="nav-label">Workplace Chat, Acronyms &amp; Jargon</span></a></div></aside>
 <main class="main"><section class="intro"><div class="eyebrow">American English · 2026 edition</div><h1>Ready to Say.</h1><p>Useful phrases for real conversations. Open any line to see it in context and learn when to use it.</p></section>
-<div class="controls" aria-label="Filter by register"><button class="filter active" data-filter="ALL" aria-pressed="true">All</button><button class="filter" data-filter="CASUAL" aria-pressed="false">Casual</button><button class="filter" data-filter="NEUTRAL" aria-pressed="false">Neutral</button><button class="filter" data-filter="BUSINESS" aria-pressed="false">Business</button><button class="filter" data-filter="AVOID" aria-pressed="false">Avoid</button><button class="filter saved-filter" id="saved-filter" aria-pressed="false" title="Show only phrases saved for practice">☆ Saved <span id="saved-count">0</span></button><span class="result-count" id="count" aria-live="polite">Browse all entries</span></div><div class="utility-row"><span class="utility-hint">Open a phrase to see an example and tone note.</span><div class="utility-actions"><button class="utility-btn" id="expand-all" type="button">Expand all</button><button class="utility-btn" id="collapse-all" type="button">Collapse all</button><button class="utility-btn" id="review-due" type="button">Review due <span id="due-count">0</span></button><button class="utility-btn" id="practice-saved" type="button">Practice saved</button><button class="utility-btn" id="export-saved" type="button">Export saved</button><button class="utility-btn" id="reset-view" type="button">Reset</button></div></div>
+<section class="phrase-tools" aria-label="Phrase of the day">
+ <article class="spotlight-card daily-card" aria-labelledby="daily-heading">
+  <div class="spotlight-top"><span class="spotlight-kicker">✦ PHRASE OF THE DAY</span><span class="spotlight-date" id="daily-date"></span></div>
+  <h2 id="daily-heading" class="spotlight-phrase">Loading today’s phrase…</h2>
+  <p class="spotlight-example" id="daily-example"></p>
+  <p class="spotlight-note" id="daily-note"></p>
+  <div class="spotlight-actions"><button class="utility-btn" type="button" id="daily-open">Open phrase in chapter ↗</button><button class="utility-btn" type="button" id="daily-copy">Copy phrase</button></div>
+ </article>
+</section>
+<div class="controls" aria-label="Filter by register"><button class="filter active" data-filter="ALL" aria-pressed="true">All</button><button class="filter" data-filter="CASUAL" aria-pressed="false">Casual</button><button class="filter" data-filter="NEUTRAL" aria-pressed="false">Neutral</button><button class="filter" data-filter="BUSINESS" aria-pressed="false">Business</button><button class="filter" data-filter="AVOID" aria-pressed="false">Avoid</button><button class="filter saved-filter" id="saved-filter" aria-pressed="false" title="Show only phrases saved for practice">☆ Saved <span id="saved-count">0</span></button><span class="result-count" id="count" aria-live="polite">Browse all entries</span></div><div class="utility-row"><span class="utility-hint">Open a phrase to see an example and tone note.</span><div class="utility-actions"><button class="utility-btn" id="expand-all" type="button">Expand all</button><button class="utility-btn" id="collapse-all" type="button">Collapse all</button><button class="utility-btn" id="review-due" type="button">Review due <span id="due-count">0</span></button><button class="utility-btn" id="practice-saved" type="button">Practice saved</button><button class="utility-btn" id="export-saved" type="button">Export saved</button><button class="utility-btn random-quiet" id="roll-dice" type="button" aria-label="Open a random phrase in its chapter" title="Jump to a random phrase">🎲 Random phrase</button><button class="utility-btn" id="reset-view" type="button">Reset</button></div></div>
 <div id="content"></div><div class="empty" id="empty"><strong>No phrases found.</strong><span id="empty-help">Try a shorter search or choose another register.</span><button class="utility-btn" id="empty-reset" type="button">Clear search and filters</button></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="practice-backdrop" id="practice-backdrop" hidden>
  <section class="practice-dialog" role="dialog" aria-modal="true" aria-labelledby="practice-title">
@@ -279,11 +440,16 @@ for(const x of DATA){
  if(!chapterEntries.has(chapter))chapterEntries.set(chapter,[]);
  chapterEntries.get(chapter).push(item);
 }
+// Reconcile browser storage with this edition's real phrase IDs. Old or malformed
+// keys must never inflate the Saved badge or create an empty saved list.
+const validEntryKeys=new Set([...chapterEntries.values()].flat().map(entryKey));
+const reconciledSaved=new Set([...savedPhrases].filter(key=>typeof key==='string'&&validEntryKeys.has(key)));
+if(reconciledSaved.size!==savedPhrases.size){savedPhrases=reconciledSaved;persistSaved();}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function regClass(s){return ({CASUAL:'casual',NEUTRAL:'neutral',BUSINESS:'business',AVOID:'avoid'})[s]||'';}
 function matches(x,q){return (activeRegister==='ALL'||x.register===activeRegister)&&(!savedOnly||savedPhrases.has(entryKey(x)))&&(!q||[x.say,x.action,x.note,x.section,x.chapter,chapterMeta.get(x.chapter)?.title].join(' ').toLowerCase().includes(q));}
 
-let practiceDeck=[],practiceIndex=0,practiceMode='all-saved';
+let practiceDeck=[],practiceIndex=0,practiceMode='all-saved',practiceOpener=null;
 const REVIEW_KEY='ready-to-say:review-v1';
 let reviewState={};
 try{reviewState=JSON.parse(localStorage.getItem(REVIEW_KEY)||'{}')||{};}catch{reviewState={};}
@@ -295,9 +461,11 @@ function dueEntries(){
 }
 function updateDueCount(){const el=document.querySelector('#due-count');if(el)el.textContent=dueEntries().length;}
 function startPractice(mode){
+ practiceOpener=document.activeElement;
  const saved=getSavedEntries();
  practiceMode=mode;
- practiceDeck=(mode==='due'?dueEntries():saved).sort(()=>Math.random()-.5);
+ practiceDeck=(mode==='due'?dueEntries():saved).slice();
+ for(let i=practiceDeck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[practiceDeck[i],practiceDeck[j]]=[practiceDeck[j],practiceDeck[i]];}
  if(!practiceDeck.length){toast(mode==='due'?'Nothing due right now — save phrases or come back later':'Save phrases first, then start a practice round');return;}
  practiceIndex=0;
  document.querySelector('#practice-backdrop').hidden=false;
@@ -334,13 +502,13 @@ function rateRecall(rating){
  if(practiceIndex>=practiceDeck.length-1){closePractice();toast('Round complete — review schedule updated');return;}
  practiceIndex++;showPracticeCard();
 }
-function closePractice(){document.querySelector('#practice-backdrop').hidden=true;document.querySelector('#practice-saved').focus();updateDueCount();}
+function closePractice(){document.querySelector('#practice-backdrop').hidden=true;if(practiceOpener&&typeof practiceOpener.focus==='function')practiceOpener.focus();else document.querySelector('#practice-saved').focus();updateDueCount();}
 function render(){
  const q=search.value.trim().toLowerCase();
  document.querySelector('#clear-search').hidden=!search.value;
  let html='',visible=0,visibleChapters=0;
  for(const [chapter,meta] of chapterMeta){
-  if(chapter!==activeChapter)continue;
+  if(!savedOnly&&chapter!==activeChapter)continue;
   const entries=chapterEntries.get(chapter)||[];
   const filtered=entries.filter(x=>matches(x,q));
   if(!filtered.length)continue;
@@ -351,18 +519,18 @@ function render(){
   for(const x of filtered){
    if(x.section!==currentSection){if(listOpen)html+='</div>';currentSection=x.section;if(currentSection)html+=`<h3 class="section-title">${esc(currentSection)}</h3>`;html+='<div class="entry-list">';listOpen=true;}
    visible++;
-   html+=`<details class="entry" data-register="${esc(x.register)}"><summary><span class="reg ${regClass(x.register)}">${esc(x.register)}</span><span class="phrase">${esc(x.say)}</span><span class="chev" aria-hidden="true">＋</span></summary><div class="entry-body">${x.action?`<div><div class="detail-label">Example</div><div class="example">${esc(x.action)}</div></div>`:''}${x.note?`<div><div class="detail-label">Tone note</div><div class="note">${esc(x.note)}</div></div>`:''}<div class="entry-actions"><button class="copy-phrase" type="button" data-copy="${esc(x.say)}">Copy phrase</button><button class="save-phrase ${savedPhrases.has(entryKey(x))?'saved':''}" type="button" data-save="${esc(entryKey(x))}" aria-pressed="${savedPhrases.has(entryKey(x))?'true':'false'}">${savedPhrases.has(entryKey(x))?'★ Saved for practice':'☆ Save for practice'}</button></div></div></details>`;
+   html+=`<details class="entry" data-entry-key="${esc(entryKey(x))}" data-register="${esc(x.register)}"><summary><span class="reg ${regClass(x.register)}">${esc(x.register)}</span><span class="phrase">${esc(x.say)}</span><span class="chev" aria-hidden="true">＋</span></summary><div class="entry-body">${x.action?`<div><div class="detail-label">Example</div><div class="example">${esc(x.action)}</div></div>`:''}${x.note?`<div><div class="detail-label">Tone note</div><div class="note">${esc(x.note)}</div></div>`:''}<div class="entry-actions"><button class="copy-phrase" type="button" data-copy="${esc(x.say)}">Copy phrase</button><button class="save-phrase ${savedPhrases.has(entryKey(x))?'saved':''}" type="button" data-save="${esc(entryKey(x))}" aria-pressed="${savedPhrases.has(entryKey(x))?'true':'false'}">${savedPhrases.has(entryKey(x))?'★ Saved for practice':'☆ Save for practice'}</button></div></div></details>`;
   }
   if(listOpen)html+='</div>';
   html+='</section>';
  }
  content.innerHTML=html;
- document.querySelector('#saved-count').textContent=savedPhrases.size;
+ document.querySelector('#saved-count').textContent=getSavedEntries().length;
  document.querySelector('#saved-filter').classList.toggle('active',savedOnly);
  document.querySelector('#saved-filter').setAttribute('aria-pressed',String(savedOnly));
  document.querySelector('#count').textContent=(q||activeRegister!=='ALL'||savedOnly)?`${visible} ${visible===1?'phrase':'phrases'} · ${visibleChapters} ${visibleChapters===1?'chapter':'chapters'}${savedOnly?' · saved list':''}`:`${visible} phrases across ${visibleChapters} chapters`;
  document.querySelector('#empty').style.display=visible?'none':'flex';
- document.querySelector('#empty-help').textContent=savedOnly&&!savedPhrases.size?'Save phrases as you browse, and they’ll appear here for practice.':savedOnly?'No saved phrases match these filters. Try clearing the search or register filter.':'Try a shorter search or choose another register.';
+ document.querySelector('#empty-help').textContent=savedOnly&&!getSavedEntries().length?'Save phrases as you browse, and they’ll appear here for practice.':savedOnly?'No saved phrases match these filters. Try clearing the search or register filter.':'Try a shorter search or choose another register.';
  nav.querySelectorAll('a[href^="#ch-"]').forEach(a=>{
   const target=a.getAttribute('href').slice(4);
   a.classList.remove('filtered-out');a.setAttribute('aria-disabled','false');
@@ -404,7 +572,7 @@ document.querySelector('#export-saved').addEventListener('click',()=>{
  if(!list.length){toast('Save a few phrases first');return;}
  const text=list.map(x=>`${x.say}\nRegister: ${x.register}\nChapter: ${chapterMeta.get(x.chapter)?.title||x.chapter}${x.action?`\nExample: ${x.action}`:''}${x.note?`\nTone note: ${x.note}`:''}`).join('\n\n---\n\n');
  const blob=new Blob([text],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
- a.href=url;a.download='ready-to-say-saved-phrases.txt';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);toast(`Exported ${list.length} saved ${list.length===1?'phrase':'phrases'}`);
+ a.href=url;a.download='ready-to-say-saved-phrases.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast(`Exported ${list.length} saved ${list.length===1?'phrase':'phrases'}`);
 });
 
 document.querySelector('#practice-saved').addEventListener('click',openPractice);
@@ -440,15 +608,116 @@ nav.querySelectorAll('a[href^="#ch-"]').forEach(a=>a.addEventListener('click',e=
  e.preventDefault();
  const target=a.getAttribute('href').slice(4);
  if(!chapterMeta.has(target))return;
+ // Selecting a chapter exits the cross-chapter Saved collection and returns to one chapter.
+ const previousY=window.scrollY;
  activeChapter=target;
+ savedOnly=false;
  render();
- shell.classList.remove('nav-open');document.querySelector('#toggle-nav').setAttribute('aria-expanded','false');
- window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+ shell.classList.remove('nav-open');
+ document.querySelector('#toggle-nav').setAttribute('aria-expanded','false');
+ requestAnimationFrame(()=>window.scrollTo({top:previousY,behavior:'auto'}));
 }));
 document.addEventListener('keydown',e=>{
+ const backdrop=document.querySelector('#practice-backdrop');
+ if(!backdrop.hidden&&e.key==='Tab'){
+  const focusable=[...backdrop.querySelectorAll('button:not([disabled]):not([hidden]),[href],input:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null);
+  if(focusable.length){
+   const first=focusable[0],last=focusable[focusable.length-1];
+   if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+ }
  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();search.focus();}
- if(e.key==='Escape'){if(!document.querySelector('#practice-backdrop').hidden){closePractice();return;}if(search.value){search.value='';render();}shell.classList.remove('nav-open');document.querySelector('#toggle-nav').setAttribute('aria-expanded','false');}
+ if(e.key==='Escape'){if(!backdrop.hidden){closePractice();return;}if(search.value){search.value='';render();}shell.classList.remove('nav-open');document.querySelector('#toggle-nav').setAttribute('aria-expanded','false');}
  if((e.metaKey||e.ctrlKey)&&e.shiftKey&&e.key.toLowerCase()==='o'){e.preventDefault();setAll(true);}
  if((e.metaKey||e.ctrlKey)&&e.shiftKey&&e.key.toLowerCase()==='s'){e.preventDefault();savedOnly=!savedOnly;render();}
 });
+
+// Theme choice persists on this device; default to the light editorial palette.
+const THEME_KEY='ready-to-say:theme-v1';
+const themeToggle=document.querySelector('#theme-toggle');
+function setTheme(mode, persist=true){
+ const dark=mode==='dark';
+ document.body.classList.toggle('dark-theme',dark);
+ document.documentElement.style.colorScheme=dark?'dark':'light';
+ themeToggle.textContent=dark?'☀':'☾';
+ themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+ themeToggle.title=dark?'Switch to light mode':'Switch to dark mode';
+ themeToggle.setAttribute('aria-pressed',String(dark));
+ const meta=document.querySelector('meta[name="theme-color"]');
+ if(meta)meta.content=dark?'#111722':'#F8FAFD';
+ if(persist){try{localStorage.setItem(THEME_KEY,dark?'dark':'light');}catch{}}
+}
+let initialTheme='light';
+try{
+ const savedTheme=localStorage.getItem(THEME_KEY);
+ initialTheme=savedTheme||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+}catch{
+ initialTheme=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+}
+setTheme(initialTheme,false);
+themeToggle.addEventListener('click',()=>setTheme(document.body.classList.contains('dark-theme')?'light':'dark',true));
+
+// Daily phrase is stable for a given local calendar date, changing the next day.
+const allPhrases=[...chapterEntries.values()].flat();
+function dateStamp(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+function hashText(text){let h=2166136261;for(let i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function chapterForEntry(x){return chapterMeta.get(String(x.chapter))?.title||`Chapter ${x.chapter}`;}
+function openPhraseInChapter(x){
+ if(!x)return;
+ activeChapter=String(x.chapter);
+ activeRegister='ALL';
+ savedOnly=false;
+ search.value='';
+ document.querySelectorAll('[data-filter]').forEach(b=>{
+  const on=b.dataset.filter==='ALL';
+  b.classList.toggle('active',on);
+  b.setAttribute('aria-pressed',String(on));
+ });
+ render();
+ const target=content.querySelector(`details.entry[data-entry-key="${CSS.escape(entryKey(x))}"]`);
+ if(target){
+  target.open=true;
+  updateBulkButtons();
+  requestAnimationFrame(()=>target.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+  const summary=target.querySelector('summary');
+  if(summary)summary.focus({preventScroll:true});
+ }
+ shell.classList.remove('nav-open');
+ document.querySelector('#toggle-nav').setAttribute('aria-expanded','false');
+}
+function fillSpotlight(prefix,x){
+ if(prefix!=='daily'||!x)return;
+ document.querySelector('#daily-heading').textContent=x.say;
+ document.querySelector('#daily-example').textContent=x.action?`Example: ${x.action}`:'';
+ document.querySelector('#daily-note').textContent=x.note?`Tone note: ${x.note}`:'';
+ const open=document.querySelector('#daily-open'),copy=document.querySelector('#daily-copy');
+ open.disabled=false;copy.disabled=false;
+ open.onclick=()=>openPhraseInChapter(x);
+ copy.onclick=()=>copyText(x.say);
+}
+function setDailyPhrase(){
+ if(!allPhrases.length)return;
+ const stamp=dateStamp(),idx=hashText('ready-to-say:'+stamp)%allPhrases.length,x=allPhrases[idx];
+ const date=new Date();document.querySelector('#daily-date').textContent=date.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+ fillSpotlight('daily',x);
+}
+let lastRandomIndex=-1;
+function rollRandomPhrase(){
+ if(!allPhrases.length){toast('No phrases are available yet');return;}
+ let idx=Math.floor(Math.random()*allPhrases.length);
+ if(allPhrases.length>1&&idx===lastRandomIndex)idx=(idx+1+Math.floor(Math.random()*(allPhrases.length-1)))%allPhrases.length;
+ lastRandomIndex=idx;
+ openPhraseInChapter(allPhrases[idx]);
+ toast('Random phrase opened in its chapter');
+}
+document.querySelector('#roll-dice').addEventListener('click',rollRandomPhrase);
+setDailyPhrase();
 render();updateDueCount();</script></body></html>
+<style>
+/* Final visual QA overrides */
+body.dark-theme .random-quiet{background:#202D40!important;color:#D8E6FA!important;border-color:#3B4D66!important}
+body.dark-theme .random-quiet:hover{background:#2A3B52!important}
+.random-quiet{white-space:nowrap}
+@media(max-width:520px){.random-quiet{white-space:normal}}
+</style>
