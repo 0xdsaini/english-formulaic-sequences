@@ -9,7 +9,8 @@ button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:
 .top{height:62px;position:sticky;top:0;z-index:30;background:#FFFCF7ed;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 22px;gap:14px}
 .icon-btn{height:36px;width:36px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;background:white;color:var(--ink);flex-shrink:0}.brand{font-weight:850;letter-spacing:.15em;font-size:12px;white-space:nowrap}.brand span{color:#9A7B2F}.search{margin-left:auto;position:relative;width:min(420px,48vw)}.search input{width:100%;height:38px;border:1px solid var(--line);border-radius:10px;background:white;padding:0 38px 0 12px;outline:none;font-size:13px}.search input:focus{border-color:#9A8C7D;box-shadow:0 0 0 3px #9A8C7D20}.search kbd{position:absolute;right:10px;top:9px;color:#9A8C7D;font-size:11px}
 .shell{display:grid;grid-template-columns:var(--sidebar) minmax(0,1fr);min-height:calc(100vh - 62px);transition:grid-template-columns .2s ease}.sidebar{position:sticky;top:62px;height:calc(100vh - 62px);overflow:auto;border-right:1px solid var(--line);padding:20px 12px 28px;background:#FFFCF7}.side-head{display:flex;align-items:center;justify-content:space-between;padding:0 8px 12px;color:var(--muted);font-size:10px;letter-spacing:.15em;font-weight:800}.nav-group{margin-bottom:17px}.nav-part{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#9A8C7D;padding:8px 10px;font-weight:800}.nav-link{display:flex;gap:10px;align-items:baseline;padding:7px 10px;border-radius:8px;font-size:12px;color:#5C554D;line-height:1.35}.nav-link:hover{background:var(--soft)}.nav-link.active{background:#F0E9DF;color:var(--ink);font-weight:750}.nav-num{font-size:10px;color:#9A7B2F;min-width:18px;font-weight:800}.shell.collapsed{grid-template-columns:0 minmax(0,1fr)}.shell.collapsed .sidebar{visibility:hidden;overflow:hidden;padding:0;border:0}
-.main{min-width:0;max-width:1050px;width:100%;margin:0 auto;padding:42px clamp(18px,4vw,54px) 80px}.intro{margin-bottom:30px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.19em;color:#9A7B2F;font-weight:850;margin-bottom:10px}.intro h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(35px,4.5vw,54px);line-height:1.05;letter-spacing:-.04em;margin:0 0 12px}.intro p{font-size:14px;color:var(--muted);max-width:560px;margin:0}.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:25px 0 30px}.filter{border:1px solid var(--line);border-radius:99px;padding:7px 12px;background:white;font-size:11px;color:#6B5E52}.filter.active{background:var(--ink);border-color:var(--ink);color:white}.result-count{margin-left:auto;color:#9A8C7D;font-size:11px}.part-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9A7B2F;font-weight:850;margin:40px 0 12px}.chapter{scroll-margin-top:82px;margin:0 0 28px}.chapter-head{display:flex;align-items:flex-start;gap:14px;padding:0 0 13px;border-bottom:1px solid var(--line);margin-bottom:12px}.chapter-number{font-family:Georgia,serif;font-size:27px;line-height:1;color:#B99A45;min-width:28px}.chapter-title{font-family:Georgia,"Times New Roman",serif;font-size:26px;line-height:1.15;font-weight:500;letter-spacing:-.025em;margin:0}.chapter-meta{font-size:11px;color:var(--muted);margin-top:5px}
+.main{min-width:0;max-width:1050px;width:100%;margin:0 auto;padding:42px clamp(18px,4vw,54px) 80px}.intro{margin-bottom:30px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.19em;color:#9A7B2F;font-weight:850;margin-bottom:10px}.intro h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(35px,4.5vw,54px);line-height:1.05;letter-spacing:-.04em;margin:0 0 12px}.intro p{font-size:14px;color:var(--muted);max-width:560px;margin:0}.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:25px 0 30px}.filter{border:1px solid var(--line);border-radius:99px;padding:7px 12px;background:white;font-size:11px;color:#6B5E52}.filter.active{background:var(--ink);border-color:var(--ink);color:white}.result-count{margin-left:auto;color:#9A8C7D;font-size:11px}.part-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9A7B2F;font-weight:850;margin:40px 0 12px}.chapter{scroll-margin-top:82px;margin:0 0 28px}.chapter-head{display:flex;align-items:flex-start;gap:14px;padding:0 0 13px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.chapter-head{scroll-margin-top:calc(var(--topbar-height, 76px) + 16px)}.chapter-number{font-family:Georgia,serif;font-size:27px;line-height:1;color:#B99A45;min-width:28px}.chapter-title{font-family:Georgia,"Times New Roman",serif;font-size:26px;line-height:1.15;font-weight:500;letter-spacing:-.025em;margin:0}.chapter-meta{font-size:11px;color:var(--muted);margin-top:5px}
 .section-title{font-size:12px;font-weight:800;color:#5C554D;margin:21px 0 7px}.entry-list{border-top:1px solid var(--line)}details.entry{border-bottom:1px solid var(--line);background:transparent}details.entry[open]{background:#fffefa}details.entry summary{list-style:none;display:grid;grid-template-columns:74px minmax(0,1fr) 18px;align-items:center;gap:12px;padding:12px 10px;cursor:pointer}details.entry summary::-webkit-details-marker{display:none}.reg{display:inline-flex;justify-content:center;align-items:center;border-radius:5px;padding:4px 6px;font-size:9px;letter-spacing:.08em;font-weight:850;background:#F0E9DF;color:#6B5E52}.reg.casual{background:#F5EFE6;color:#8A4B16}.reg.neutral{background:#E9F0E8;color:#365C3D}.reg.business{background:#E8E9F4;color:#434A78}.reg.avoid{background:#FFF0F0;color:#991B1B}.phrase{font-size:14px;font-weight:750;line-height:1.45}.chev{color:#9A8C7D;font-size:17px;transition:transform .15s}details[open] .chev{transform:rotate(45deg)}.entry-body{padding:0 18px 16px 96px;display:grid;gap:11px}.detail-label{font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:#9A8C7D;font-weight:850;margin-bottom:3px}.example{font-family:Georgia,"Times New Roman",serif;font-size:16px;line-height:1.55;color:#302B25}.note{font-size:12px;color:#6B5E52;line-height:1.6}.empty{display:none;text-align:center;padding:38px 15px;color:var(--muted);border:1px dashed var(--line);border-radius:12px}.empty strong{display:block;color:var(--ink);margin-bottom:5px}.footer{margin-top:60px;border-top:1px solid var(--line);padding-top:16px;color:#9A8C7D;font-size:11px}
 @media(max-width:780px){.shell{grid-template-columns:0 minmax(0,1fr)}.sidebar{position:fixed;z-index:25;left:0;top:62px;width:min(300px,85vw);height:calc(100dvh - 62px);box-shadow:20px 0 60px #0002;transform:translateX(-105%);transition:transform .2s;visibility:hidden}.shell.nav-open .sidebar{transform:translateX(0);visibility:visible}.shell.collapsed .sidebar{visibility:hidden}.main{padding-top:30px}.top{padding:0 12px;gap:9px}.brand{font-size:11px}.search{width:auto;flex:1}.search kbd{display:none}.result-count{width:100%;margin:2px 0 0}.controls{gap:6px}details.entry summary{grid-template-columns:65px minmax(0,1fr) 15px;gap:8px;padding:11px 5px}.entry-body{padding-left:78px;padding-right:8px}.phrase{font-size:13px}.chapter-title{font-size:23px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
@@ -437,6 +438,8 @@ for(const x of DATA){
  if(!chapterMeta.has(chapter)||!VALID_REGISTERS.has(register)||!phrase||HEADER_CELLS.has(phrase.toUpperCase()))continue;
  if((register==='CASUAL'&&phrase==='CASUAL'&&String(x.action||'').trim()==='NEUTRAL'&&String(x.note||'').trim()==='BUSINESS'))continue;
  const item={...x,chapter,register,section:String(x.section||'').trim(),say:phrase,action:String(x.action||'').trim(),note:String(x.note||'').trim()};
+ // Search only the phrase itself and its chapter title. Examples, usage notes, section labels, and chapter numbers are intentionally excluded.
+ item._searchText=[item.say,chapterMeta.get(chapter)?.title||''].join(' ').toLowerCase();
  if(!chapterEntries.has(chapter))chapterEntries.set(chapter,[]);
  chapterEntries.get(chapter).push(item);
 }
@@ -447,7 +450,7 @@ const reconciledSaved=new Set([...savedPhrases].filter(key=>typeof key==='string
 if(reconciledSaved.size!==savedPhrases.size){savedPhrases=reconciledSaved;persistSaved();}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function regClass(s){return ({CASUAL:'casual',NEUTRAL:'neutral',BUSINESS:'business',AVOID:'avoid'})[s]||'';}
-function matches(x,q){return (activeRegister==='ALL'||x.register===activeRegister)&&(!savedOnly||savedPhrases.has(entryKey(x)))&&(!q||[x.say,x.action,x.note,x.section,x.chapter,chapterMeta.get(x.chapter)?.title].join(' ').toLowerCase().includes(q));}
+function matches(x,q){return (activeRegister==='ALL'||x.register===activeRegister)&&(!savedOnly||savedPhrases.has(entryKey(x)))&&(!q||x._searchText.includes(q));}
 
 let practiceDeck=[],practiceIndex=0,practiceMode='all-saved',practiceOpener=null;
 const REVIEW_KEY='ready-to-say:review-v1';
@@ -503,42 +506,98 @@ function rateRecall(rating){
  practiceIndex++;showPracticeCard();
 }
 function closePractice(){document.querySelector('#practice-backdrop').hidden=true;if(practiceOpener&&typeof practiceOpener.focus==='function')practiceOpener.focus();else document.querySelector('#practice-saved').focus();updateDueCount();}
+let searchRenderTimer=0;
+// Search results should auto-position only when a search first becomes active.
+// Refining the query must never repeatedly nudge the reader's viewport.
+let searchHasAutoPositioned=false;
+const MAX_SEARCH_RESULTS=250;
 function render(){
  const q=search.value.trim().toLowerCase();
  document.querySelector('#clear-search').hidden=!search.value;
- let html='',visible=0,visibleChapters=0;
- for(const [chapter,meta] of chapterMeta){
-  if(!savedOnly&&chapter!==activeChapter)continue;
-  const entries=chapterEntries.get(chapter)||[];
-  const filtered=entries.filter(x=>matches(x,q));
-  if(!filtered.length)continue;
-  visibleChapters++;
-  const part=meta.part||partNames[String(Math.ceil(Number(chapter)/6))]||'American English';
-  html+=`<section class="chapter" id="ch-${esc(chapter)}" data-chapter="${esc(chapter)}"><div class="chapter-head"><span class="chapter-number">${esc(String(chapter).padStart(2,'0'))}</span><div><h2 class="chapter-title">${esc(meta.title)}</h2><div class="chapter-meta">${esc(part)}</div></div></div>`;
-  let currentSection=null,listOpen=false;
-  for(const x of filtered){
-   if(x.section!==currentSection){if(listOpen)html+='</div>';currentSection=x.section;if(currentSection)html+=`<h3 class="section-title">${esc(currentSection)}</h3>`;html+='<div class="entry-list">';listOpen=true;}
-   visible++;
-   html+=`<details class="entry" data-entry-key="${esc(entryKey(x))}" data-register="${esc(x.register)}"><summary><span class="reg ${regClass(x.register)}">${esc(x.register)}</span><span class="phrase">${esc(x.say)}</span><span class="chev" aria-hidden="true">＋</span></summary><div class="entry-body">${x.action?`<div><div class="detail-label">Example</div><div class="example">${esc(x.action)}</div></div>`:''}${x.note?`<div><div class="detail-label">Tone note</div><div class="note">${esc(x.note)}</div></div>`:''}<div class="entry-actions"><button class="copy-phrase" type="button" data-copy="${esc(x.say)}">Copy phrase</button><button class="save-phrase ${savedPhrases.has(entryKey(x))?'saved':''}" type="button" data-save="${esc(entryKey(x))}" aria-pressed="${savedPhrases.has(entryKey(x))?'true':'false'}">${savedPhrases.has(entryKey(x))?'★ Saved for practice':'☆ Save for practice'}</button></div></div></details>`;
+ let html='',visible=0,visibleChapters=0,shownMatches=0,totalMatches=0;
+ const tooShort=!!q&&q.length<2;
+ if(!tooShort){
+  // Search is global. Limit the number of rendered cards for broad queries so
+  // the first keystrokes never force thousands of DOM nodes to be rebuilt.
+  outer: for(const [chapter,meta] of chapterMeta){
+   if(!savedOnly&&!q&&chapter!==activeChapter)continue;
+   const entries=chapterEntries.get(chapter)||[];
+   const filtered=entries.filter(x=>matches(x,q));
+   if(!filtered.length)continue;
+   totalMatches+=filtered.length;
+   if(shownMatches>=MAX_SEARCH_RESULTS)continue;
+   const remaining=MAX_SEARCH_RESULTS-shownMatches;
+   const pageEntries=filtered.slice(0,remaining);
+   visibleChapters++;
+   const part=meta.part||partNames[String(Math.ceil(Number(chapter)/6))]||'American English';
+   html+=`<section class="chapter" id="ch-${esc(chapter)}" data-chapter="${esc(chapter)}"><div class="chapter-head"><span class="chapter-number">${esc(String(chapter).padStart(2,'0'))}</span><div><h2 class="chapter-title">${esc(meta.title)}</h2><div class="chapter-meta">${esc(part)}</div></div></div>`;
+   let currentSection=null,listOpen=false;
+   for(const x of pageEntries){
+    if(x.section!==currentSection){if(listOpen)html+='</div>';currentSection=x.section;if(currentSection)html+=`<h3 class="section-title">${esc(currentSection)}</h3>`;html+='<div class="entry-list">';listOpen=true;}
+    visible++;shownMatches++;
+    html+=`<details class="entry" data-entry-key="${esc(entryKey(x))}" data-register="${esc(x.register)}"><summary><span class="reg ${regClass(x.register)}">${esc(x.register)}</span><span class="phrase">${esc(x.say)}</span><span class="chev" aria-hidden="true">＋</span></summary><div class="entry-body">${x.action?`<div><div class="detail-label">Example</div><div class="example">${esc(x.action)}</div></div>`:''}${x.note?`<div><div class="detail-label">Tone note</div><div class="note">${esc(x.note)}</div></div>`:''}<div class="entry-actions"><button class="copy-phrase" type="button" data-copy="${esc(x.say)}">Copy phrase</button><button class="save-phrase ${savedPhrases.has(entryKey(x))?'saved':''}" type="button" data-save="${esc(entryKey(x))}" aria-pressed="${savedPhrases.has(entryKey(x))?'true':'false'}">${savedPhrases.has(entryKey(x))?'★ Saved for practice':'☆ Save for practice'}</button></div></div></details>`;
+   }
+   if(listOpen)html+='</div>';
+   html+='</section>';
   }
-  if(listOpen)html+='</div>';
-  html+='</section>';
  }
  content.innerHTML=html;
+ content.style.overflowAnchor=q?'none':'';
  document.querySelector('#saved-count').textContent=getSavedEntries().length;
  document.querySelector('#saved-filter').classList.toggle('active',savedOnly);
  document.querySelector('#saved-filter').setAttribute('aria-pressed',String(savedOnly));
- document.querySelector('#count').textContent=(q||activeRegister!=='ALL'||savedOnly)?`${visible} ${visible===1?'phrase':'phrases'} · ${visibleChapters} ${visibleChapters===1?'chapter':'chapters'}${savedOnly?' · saved list':''}`:`${visible} phrases across ${visibleChapters} chapters`;
- document.querySelector('#empty').style.display=visible?'none':'flex';
+ let countText;
+ if(tooShort)countText='Type at least 2 characters to search all chapters';
+ else if(q&&totalMatches>MAX_SEARCH_RESULTS)countText=`Showing ${visible} of ${totalMatches} matches · refine your search`;
+ else countText=(q||activeRegister!=='ALL'||savedOnly)?`${visible} ${visible===1?'phrase':'phrases'} · ${visibleChapters} ${visibleChapters===1?'chapter':'chapters'}${savedOnly?' · saved list':''}`:`${visible} phrases across ${visibleChapters} chapters`;
+ document.querySelector('#count').textContent=countText;
+ document.querySelector('#empty').style.display=(visible||tooShort)?'none':'flex';
  document.querySelector('#empty-help').textContent=savedOnly&&!getSavedEntries().length?'Save phrases as you browse, and they’ll appear here for practice.':savedOnly?'No saved phrases match these filters. Try clearing the search or register filter.':'Try a shorter search or choose another register.';
  nav.querySelectorAll('a[href^="#ch-"]').forEach(a=>{
   const target=a.getAttribute('href').slice(4);
-  a.classList.remove('filtered-out');a.setAttribute('aria-disabled','false');
+  const present=!!content.querySelector(`#ch-${CSS.escape(target)}`);
+  a.classList.toggle('filtered-out',!!q&&!present);
+  a.setAttribute('aria-disabled',String(!!q&&!present));
   a.classList.toggle('active',target===activeChapter);
   a.setAttribute('aria-current',target===activeChapter?'page':'false');
  });
  updateBulkButtons();
 }
+function keepSidebarChapterVisible(chapter){
+ const link=nav.querySelector(`a[href="#ch-${CSS.escape(String(chapter))}"]`);
+ if(!link)return;
+ const navRect=nav.getBoundingClientRect(),linkRect=link.getBoundingClientRect();
+ if(linkRect.top<navRect.top+42)nav.scrollTop-=navRect.top+42-linkRect.top;
+ else if(linkRect.bottom>navRect.bottom-12)nav.scrollTop+=linkRect.bottom-(navRect.bottom-12);
+}
+let scrollChapterRaf=0;
+function syncSidebarToSearchResults(){
+ if(!search.value.trim()||search.value.trim().length<2)return;
+ if(scrollChapterRaf)return;
+ scrollChapterRaf=requestAnimationFrame(()=>{
+  scrollChapterRaf=0;
+  const sections=[...content.querySelectorAll('.chapter[data-chapter]')];
+  if(!sections.length)return;
+  const line=Math.min(window.innerHeight*.32,240);
+  let current=sections[0],best=Infinity;
+  for(const section of sections){
+   const r=section.getBoundingClientRect();
+   const distance=r.top<=line&&r.bottom>=line?0:Math.min(Math.abs(r.top-line),Math.abs(r.bottom-line));
+   if(distance<best){best=distance;current=section;}
+  }
+  const chapter=current.dataset.chapter;
+  if(chapter&&chapter!==activeChapter){
+   activeChapter=chapter;
+   nav.querySelectorAll('a[href^="#ch-"]').forEach(a=>{
+    const on=a.getAttribute('href')===`#ch-${chapter}`;
+    a.classList.toggle('active',on);a.setAttribute('aria-current',on?'page':'false');
+   });
+   keepSidebarChapterVisible(chapter);
+  }
+ });
+}
+window.addEventListener('scroll',syncSidebarToSearchResults,{passive:true});
+
 function updateBulkButtons(){
  const entries=[...content.querySelectorAll('details.entry')];
  const open=entries.filter(e=>e.open).length;
@@ -547,7 +606,7 @@ function updateBulkButtons(){
  for(const id of ['expand-all','collapse-all'])document.getElementById(id).style.opacity=document.getElementById(id).disabled?'.55':'1';
 }
 function setAll(open){content.querySelectorAll('details.entry').forEach(e=>e.open=open);updateBulkButtons();}
-function resetView(){search.value='';activeRegister='ALL';savedOnly=false;activeChapter='1';document.querySelectorAll('[data-filter]').forEach(b=>{const on=b.dataset.filter==='ALL';b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});render();}
+function resetView(){search.value='';searchHasAutoPositioned=false;activeRegister='ALL';savedOnly=false;activeChapter='1';document.querySelectorAll('[data-filter]').forEach(b=>{const on=b.dataset.filter==='ALL';b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});render();}
 let toastTimer;
 function toast(message){const el=document.querySelector('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),1800);}
 async function copyText(value){
@@ -560,8 +619,42 @@ document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click'
  render();
 }));
 document.querySelector('#saved-filter').addEventListener('click',()=>{savedOnly=!savedOnly;render();});
-search.addEventListener('input',render);
-document.querySelector('#clear-search').addEventListener('click',()=>{search.value='';render();search.focus();});
+search.addEventListener('input',()=>{
+ clearTimeout(searchRenderTimer);
+ const typedQuery=search.value.trim();
+ if(!typedQuery)searchHasAutoPositioned=false;
+ // Remember the current viewport before replacing result DOM. This prevents
+ // browser scroll anchoring from shifting the page as each character changes matches.
+ const savedScrollY=window.scrollY;
+ searchRenderTimer=setTimeout(()=>{
+  const query=search.value.trim();
+  const shouldAutoPosition=query.length>=2&&!searchHasAutoPositioned;
+  render();
+  if(query.length>=2){
+   if(shouldAutoPosition){
+    const firstChapter=content.querySelector('.chapter[data-chapter]');
+    const heading=firstChapter?.querySelector('.chapter-head');
+    if(heading){
+     // Align the full chapter heading below the fixed top bar, once per search.
+     const topBar=document.querySelector('.top');
+     const barBottom=topBar ? Math.max(0, topBar.getBoundingClientRect().bottom) : 0;
+     const breathingRoom=16;
+     const targetTop=window.scrollY+heading.getBoundingClientRect().top-barBottom-breathingRoom;
+     window.scrollTo({top:Math.max(0,targetTop),behavior:'auto'});
+     searchHasAutoPositioned=true;
+    }
+   }else{
+    // Query refinement: keep the reader exactly where they were; don't auto-scroll.
+    window.scrollTo({top:savedScrollY,behavior:'auto'});
+   }
+   syncSidebarToSearchResults();
+  }else{
+   // Preserve the viewport even while the query is empty or only one character.
+   window.scrollTo({top:savedScrollY,behavior:'auto'});
+  }
+ },160);
+});
+document.querySelector('#clear-search').addEventListener('click',()=>{clearTimeout(searchRenderTimer);search.value='';searchHasAutoPositioned=false;render();search.focus();});
 document.querySelector('#expand-all').addEventListener('click',()=>setAll(true));
 document.querySelector('#collapse-all').addEventListener('click',()=>setAll(false));
 document.querySelector('#reset-view').addEventListener('click',()=>{resetView();window.scrollTo({top:0,behavior:'smooth'});});
@@ -608,7 +701,29 @@ nav.querySelectorAll('a[href^="#ch-"]').forEach(a=>a.addEventListener('click',e=
  e.preventDefault();
  const target=a.getAttribute('href').slice(4);
  if(!chapterMeta.has(target))return;
- // Selecting a chapter exits Saved and aligns its title at the top of the viewport.
+ const query=search.value.trim();
+ // During global search, sidebar navigation stays in search mode and jumps to
+ // that chapter's matching results instead of clearing the query.
+ if(query.length>=2){
+  const resultSection=content.querySelector(`#ch-${CSS.escape(target)}[data-chapter]`);
+  if(!resultSection){toast('No visible search results in this chapter');return;}
+  activeChapter=target;
+  nav.querySelectorAll('a[href^="#ch-"]').forEach(link=>{
+   const on=link.getAttribute('href')===`#ch-${target}`;
+   link.classList.toggle('active',on);link.setAttribute('aria-current',on?'page':'false');
+  });
+  shell.classList.remove('nav-open');
+  document.querySelector('#toggle-nav').setAttribute('aria-expanded','false');
+  requestAnimationFrame(()=>{
+   resultSection.scrollIntoView({block:'start',behavior:'auto'});
+   keepSidebarChapterVisible(target);
+  });
+  return;
+ }
+ // Outside global search, selecting a chapter exits Saved and aligns its title.
+ clearTimeout(searchRenderTimer);
+ search.value='';
+ searchHasAutoPositioned=false;
  activeChapter=target;
  savedOnly=false;
  render();
@@ -630,7 +745,7 @@ document.addEventListener('keydown',e=>{
   }
  }
  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();search.focus();}
- if(e.key==='Escape'){if(!backdrop.hidden){closePractice();return;}if(search.value){search.value='';render();}shell.classList.remove('nav-open');document.querySelector('#toggle-nav').setAttribute('aria-expanded','false');}
+ if(e.key==='Escape'){if(!backdrop.hidden){closePractice();return;}if(search.value){clearTimeout(searchRenderTimer);search.value='';searchHasAutoPositioned=false;render();}shell.classList.remove('nav-open');document.querySelector('#toggle-nav').setAttribute('aria-expanded','false');}
  if((e.metaKey||e.ctrlKey)&&e.shiftKey&&e.key.toLowerCase()==='o'){e.preventDefault();setAll(true);}
  if((e.metaKey||e.ctrlKey)&&e.shiftKey&&e.key.toLowerCase()==='s'){e.preventDefault();savedOnly=!savedOnly;render();}
 });
